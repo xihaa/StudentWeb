@@ -1,0 +1,24 @@
+[{"id": "1", "tigan": {
+    "string": "从前有一位小朋友有一天他走丢了..",
+    "img": "assets/img/chi.png"
+  }, "answer":["A","B","C","D","E"],"explain": {
+    "string": "他走丢的原因竟然是...",
+    "img": "assets/img/chi.png"
+  }, "zhishidian": "名词解释", "zcuoyin":"理解出错"
+  },
+  {"id": "1", "tigan": {
+    "string": "从前有一位小朋友有一天他走丢了..",
+    "img": "assets/img/chi.png"
+  }, "answer":["A","B","C","D","E"],"explain": {
+    "string": "他走丢的原因竟然是...",
+    "img": "assets/img/chi.png"
+  }, "zhishidian": "名词解释", "zcuoyin":"理解出错"
+  },
+  {"id": "1", "tigan": {
+    "string": "从前有一位小朋友有一天他走丢了..",
+    "img": "assets/img/chi.png"
+  }, "answer":["A","B","C","D","E"],"explain": {
+    "string": "他走丢的原因竟然是...",
+    "img": "assets/img/chi.png"
+  }, "zhishidian": "名词解释", "zcuoyin":"理解出错"
+  }]

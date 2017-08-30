@@ -1,0 +1,33 @@
+<div class="subjectmis">
+  <tabset type="pills">
+    <tab heading="按时间排序">
+      <ul style="padding: 0">
+        <li *ngFor="let cuoti of cuotis;let i=index">
+          <my-cuoti [cuoti]="cuoti"  [i]="i+1"></my-cuoti>
+        </li>
+        <hr>
+      </ul>
+    </tab>
+    <tab heading="按知识点排序">Pills content 1</tab>
+    <tab heading="智能排序">Pills content 2</tab>
+  </tabset>
+  <nav aria-label="Page navigation" style="float: right;">
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">...</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

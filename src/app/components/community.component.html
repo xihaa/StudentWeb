@@ -1,0 +1,18 @@
+<div class="taolunqu">
+<div class="media" style="margin-right: 0;">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" [src]=commu.touxiang alt="我的头像" style="width: 50px;height: 50px;border-radius: 80px;margin-right: 20px;">
+    </a>
+  </div>
+  <div class="media-body" style="width: 100%">
+    <p class="media-heading"><strong>{{commu.id}}<br>{{commu.date}}</strong></p>
+    <p style="color: #555555;">{{commu.content.word}}</p>
+    <my-cuoti [cuoti]="commu.content.cuoti"></my-cuoti>
+  </div>
+</div>
+<div class="gong">
+  <div style="width: 10%;float: right;color: #555555;"><a title="赞" class="zan" (click)="add()"><i class="fa fa-thumbs-o-up"></i><span>{{commu.zan}}</span></a></div>
+  <div style="width: 10%;float: right;"><a title="积分" href="#" style="color:#4ebd74"><i class="fa fa-smile-o" style="color:#4ebd74"></i>积分{{commu.jifen}}</a></div>
+</div>
+</div>

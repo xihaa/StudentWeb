@@ -1,0 +1,59 @@
+<div class="quanzi">
+  <tabset [vertical]="true" type="pills">
+    <tab>
+    <template tabHeading>
+      <div class="qtabhead">
+        <h6>班级圈</h6>
+      </div>
+    </template>
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object" src="assets/img/tou.jpg" alt="我的头像" style="width: 50px;height: 50px;border-radius: 80px;margin-right: 20px;">
+          </a>
+        </div>
+        <div class="media-body">
+          <textarea rows="4" cols="90" name="mypinglun" placeholder="写下你的想法.." style="width: 95%;margin-right: auto;margin-left: auto;" ></textarea>
+          <webuploader [options]="imgOptions1" (onReady)="onImgReady1($event)" (onDestroy)="onImgDestroy1()">
+            <div id="uploader-demo1" class="wu-example">
+              <div id="fileList1" class="uploader-list"></div>
+              <div id="filePicker1" style="height: 16px;"><img src="assets/img/tupian.png"><span style="color:#4dbd74;">&nbsp;&nbsp;图片</span></div>
+            </div>
+          </webuploader>
+          <span class="num-limit"><span id="js-pl-limit">0</span>/300</span>
+        </div>
+      </div>
+      <button type="submit"style="float: right;margin-right:30px;width:80px;height: 40px;border-radius: 5px;background: #4ebd74;color: #ffffff">发表评论</button>
+      <div class="mykong">
+        <p></p>
+      </div>
+      <hr>
+      <div class="mykong">
+        <p></p>
+      </div>
+      <div class="pinglunqu" style="width: 95%;">
+        <ul style="padding: 0;">
+          <li style="width: 100%" *ngFor="let comu of commus">
+            <my-community [commu]="comu"></my-community>
+          </li>
+        </ul>
+      </div>
+    </tab>
+    <tab>
+    <template tabHeading>
+      <div class="qtabhead">
+        <h6>年级圈</h6>
+      </div>
+    </template>
+
+    </tab>
+    <tab>
+    <template tabHeading>
+      <div class="qtabhead">
+        <h6>校园圈</h6>
+      </div>
+    </template>
+
+    </tab>
+  </tabset>
+</div>

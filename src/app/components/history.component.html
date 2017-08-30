@@ -1,0 +1,45 @@
+<div class="subjectmis">
+  <tabset type="pills">
+    <tab heading="我的知识点夹">
+      <select  class="form-control select" [(ngModel)]="zhishidian" style="width: 18%;color: #555555;" >
+        <option *ngFor="let item of zhishidians; let i=index" [value]='item'>{{item}}</option>
+      </select>
+      <accordion  style="width:15%;float: right;">
+      <accordion-group heading="添加知识点夹">
+        <div>
+          <input type="text" class="form-control"  aria-describedby="basic-addon1" #n>
+          <button type="submit" class="btn" style="margin-top: 5px;" (click)="Jadd(n.value)">确定</button>
+        </div>
+      </accordion-group>
+      </accordion>
+      <div style="clear: both;"></div>
+      <ul style="padding: 0">
+        <li class="timu">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="shunxu-true"><p>1</p></div>
+              <span class="date">2017-07-24 11:06:09</span>
+            </div>
+            <div class="panel-body">
+              <img src="assets/img/history.png">
+            </div>
+          </div>
+        </li>
+        <li class="timu">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="shunxu-true"><p>2</p></div>
+              <span class="date">2017-07-24 11:06:09</span>
+            </div>
+            <div class="panel-body">
+              <p>历史上的启示要从三个方面进行展开，例如发展进程、正面影响、反面影响等，进一步结合当年的经济工业农业阶级等各种阶段进而得出全方位的启示。</p>
+            </div>
+          </div>
+        </li>
+        <li *ngFor="let cuoti of zsdcuotis; let i=index">
+          <my-cuoti [cuoti]="cuoti" [i]="i+3"></my-cuoti>
+        </li>
+      </ul>
+    </tab>
+  </tabset>
+</div>

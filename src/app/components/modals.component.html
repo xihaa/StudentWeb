@@ -1,0 +1,48 @@
+<div class="fcontent">
+  <div class="header">
+    <div class="fimg">
+      <img src="assets/img/tou.jpg" style="border-radius: 100px;">
+    </div>
+    <div style="width:18%;margin-left: auto;margin-right: auto;margin-top: 3%">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn mybtn">亳州一中</button>
+        <button type="button" class="btn mybtn">高三14班</button>
+      </div>
+    </div>
+    <div style="margin-left: auto;margin-right:auto;text-align: center;margin-top: 2%">
+      <div class="btn-group" role="group" style="margin-left: auto;margin-right:auto;">
+        <button type="button" class="btn" style="background-color:  rgba(0,0,0,0);border-radius:0;border-right: 1px solid #c0c0c0; ">ta的关注: 23</button>
+        <button type="button" class="btn" style="background-color: rgba(0,0,0,0);border-radius: 0">ta的粉丝: 12</button>
+      </div>
+    </div>
+  </div>
+  <tabset>
+    <tab heading="ta的错题" style="padding-left: 0;padding-right: 0;">
+      <div class="btn-group btn-group-justified" role="group"style="width:100%;margin-left: auto;margin-right: auto;text-align: center;padding: 0;margin-top: 3%">
+        <button type="button" class="btn btn-default" style="width: 12%;background-color: #7bd38a;" (click)="onClick1()">语文</button>
+        <button type="button" class="btn btn-default" style="width: 12%;background-color: #7bd38a;" (click)="onClick2()">数学</button>
+        <button type="button" class="btn btn-default" style="width: 11%;background-color: #7bd38a;">英语</button>
+        <button type="button" class="btn btn-default" style="width: 11%;background-color: #7bd38a;">物理</button>
+        <button type="button" class="btn btn-default" style="width: 11%;background-color: #7bd38a;">化学</button>
+        <button type="button" class="btn btn-default" style="width: 11%;background-color: #7bd38a;">生物</button>
+        <button type="button" class="btn btn-default" style="width: 11%;background-color: #7bd38a;">政治</button>
+        <button type="button" class="btn btn-default" style="width: 12%;background-color: #7bd38a;">历史</button>
+        <button type="button" class="btn btn-default" style="width: 12%;background-color: #7bd38a;">地理</button>
+      </div>
+      <div class="fcuotiqu">
+        <ul style="padding: 0">
+          <li *ngFor="let cuoti of pcuos let i=index">
+            <my-cuoti [cuoti]="cuoti" [i]="i+1"></my-cuoti>
+          </li>
+        </ul>
+      </div>
+    </tab>
+    <tab heading="ta的动态">
+      <ul style="padding: 0;">
+        <li style="width: 100%" *ngFor="let comu of pcommus">
+          <my-community [commu]="comu"></my-community>
+        </li>
+      </ul>
+    </tab>
+    </tabset>
+</div>

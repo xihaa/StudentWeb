@@ -1,0 +1,389 @@
+<header class="app-header navbar">
+  <button class="navbar-toggler d-lg-none" type="button" appMobileSidebarToggler>&#9776;</button>
+  <a class="navbar-brand" href="#"></a>
+  <ul class="nav navbar-nav d-md-down-none">
+    <li class="nav-item">
+      <a class="nav-link navbar-toggler" href="#" appSidebarToggler>&#9776;</a>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link" href="#">主页</a>
+    </li>
+    <!-- <li class="nav-item px-3">
+       <a class="nav-link" href="#">Users</a>
+     </li>
+     <li class="nav-item px-3">
+       <a class="nav-link" href="#">Settings</a>
+     </li>
+     -->
+   </ul>
+   <ul class="nav navbar-nav ml-auto">
+     <!--
+     <li class="nav-item d-md-down-none">
+       <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
+     </li>
+     <li class="nav-item d-md-down-none">
+       <a class="nav-link" href="#"><i class="icon-list"></i></a>
+     </li>
+     <li class="nav-item d-md-down-none">
+       <a class="nav-link" href="#"><i class="icon-location-pin"></i></a>
+     </li>
+     -->
+     <li class="nav-item">
+     <a routerLinkActive="active" [routerLink]="['/components/person']"><img src="assets/img/tou.jpg" class="img-avatar" alt="admin@bootstrapmaster.com" style="width: 40%;height: 40%;" ></a>
+     </li>
+     <li class="nav-item dropdown" dropdown (onToggle)="toggled($event)">
+       <a href class="nav-link dropdown-toggle" dropdownToggle (click)="false"><span class="d-md-down-none">时年海</span>
+       </a>
+       <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+
+         <div class="dropdown-header text-center"><strong>消息</strong></div>
+         <a class="dropdown-item" href="#"><i class="fa fa-hand-paper-o"></i>我的帖子<span class="badge badge-warning">42</span></a>
+         <a class="dropdown-item" href="#"><i class="fa fa-commenting-o"></i> 收到的回复<span class="badge badge-success">42</span></a>
+         <a class="dropdown-item" href="#"><i class="fa fa-thumbs-o-up"></i> 收到的赞<span class="badge badge-danger">42</span></a>
+
+         <div class="dropdown-header text-center"><strong>我的记录</strong></div>
+
+         <a class="dropdown-item" href="#"><i class="fa fa-user"></i> 导出记录</a>
+
+         <div class="divider"></div>
+         <a class="dropdown-item" ><i class="fa fa-sign-out"></i> 退出</a>
+       </div>
+     </li>
+     <li class="nav-item d-md-down-none">
+       <a class="nav-link navbar-toggler" href="#" appAsideMenuToggler>&#9776;</a>
+     </li>
+   </ul>
+ </header>
+
+ <div class="app-body">
+   <div class="sidebar">
+     <nav class="sidebar-nav">
+       <ul class="nav">
+         <li class="divider"></li>
+         <li class="divider"></li>
+         <li class="nav-item">
+           <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="fa fa-reddit-alien"></i> 主页 </a>
+         </li>
+         <li class="divider"></li>
+         <li class="divider"></li>
+         <li class="divider"></li>
+         <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
+           <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="fa fa-book"></i> 我的错题</a>
+           <ul class="nav-dropdown-items">
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/button']"><i class="fa fa-leanpub"></i> 语文</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/buttons']"><i class="fa fa-line-chart"></i> 数学</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/cards']"><i class="fa fa-star-o"></i> 英语</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/forms']"><i class="fa fa-star-o"></i> 物理</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/modals']"><i class="fa fa-star-o"></i> 化学</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/switches']"><i class="fa fa-star-o"></i> 生物</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/tables']"><i class="fa fa-star-o"></i> 政治</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/history']"><i class="fa fa-star-o"></i> 历史</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/tabs']"><i class="fa fa-star-o"></i> 地理</a>
+             </li>
+           </ul>
+         </li>
+          <li class="divider"></li>
+          <li class="divider"></li>
+         <li class="divider"></li>
+         <li class="nav-item">
+           <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/forms']"><i class="fa fa-camera"></i> 上传错题</a>
+         </li>
+         <li class="divider"></li>
+          <li class="divider"></li>
+         <li class="divider"></li>
+         <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
+           <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="fa fa-pencil-square"></i> 我要答题 </a>
+           <ul class="nav-dropdown-items">
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/widgets/tabs']"><i class="fa fa-leanpub"></i> 语文</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/widgets/tchis']"><i class="fa fa-line-chart"></i> 数学</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/cards']"><i class="fa fa-star-o"></i> 英语</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/forms']"><i class="fa fa-star-o"></i> 物理</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/modals']"><i class="fa fa-star-o"></i> 化学</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/switches']"><i class="fa fa-star-o"></i> 生物</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/tables']"><i class="fa fa-star-o"></i> 政治</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/history']"><i class="fa fa-star-o"></i> 历史</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/tabs']"><i class="fa fa-star-o"></i> 地理</a>
+             </li>
+           </ul>
+         </li>
+         <!--<li class="nav-item">
+           <a class="nav-link" routerLinkActive="active" [routerLink]="['/widgets']"><i class="fa fa-edit"></i> 我要做题</a>
+         </li>-->
+       <!--  <li class="nav-item">
+         <a class="nav-link" routerLinkActive="active" [routerLink]="['/widgets']"><i class="fa fa-pie-chart"></i> 我的分析</a>
+       </li>-->
+         <li class="divider"></li>
+          <li class="divider"></li>
+         <li class="divider"></li>
+         <li class="nav-item">
+           <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/switches']"><i class="fa fa-commenting"></i> 我的圈子</a>
+         </li>
+         <li class="divider"></li>
+         <li class="divider"></li>
+         <li class="divider"></li>
+         <!--<li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
+           <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="fa fa-instagram"></i> Icons</a>
+           <ul class="nav-dropdown-items">
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/icons/font-awesome']"><i class="icon-star"></i> Font Awesome</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/icons/simple-line-icons']"><i class="icon-star"></i> Simple Line Icons</a>
+             </li>
+           </ul>
+         </li>-->
+         <li class="divider"></li>
+        <!-- <li class="nav-title">
+           Extras
+         </li>
+         <li class="nav-item nav-dropdown" appNavDropdown>
+           <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-star"></i> Pages</a>
+           <ul class="nav-dropdown-items">
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/login']"><i class="icon-star"></i> Login</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/register']"><i class="icon-star"></i> Register</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/404']"><i class="icon-star"></i> Error 404</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/500']"><i class="icon-star"></i> Error 500</a>
+             </li>
+           </ul>
+         </li>-->
+       </ul>
+     </nav>
+   </div>
+
+   <!-- Main content -->
+  <main class="main">
+
+    <!-- Breadcrumb -->
+    <!--<ol class="breadcrumb">
+      <app-breadcrumbs></app-breadcrumbs>
+      &lt;!&ndash; Breadcrumb Menu&ndash;&gt;
+      <li class="breadcrumb-menu d-md-down-none">
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          <a class="btn btn-secondary" href="#"><i class="icon-speech"></i></a>
+          <a class="btn btn-secondary" [routerLink]="['/dashboard']"><i class="icon-graph"></i> &nbsp;Dashboard</a>
+          <a class="btn btn-secondary" href="#"><i class="icon-settings"></i> &nbsp;Settings</a>
+        </div>
+      </li>
+    </ol>-->
+
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div><!-- /.conainer-fluid -->
+  </main>
+
+  <aside class="aside-menu">
+    <tabset>
+      <tab>
+        <ng-template tabHeading><i class="icon-list"></i></ng-template>
+        <div class="callout m-0 py-2 text-muted text-center bg-faded text-uppercase">
+          <small><b>我的计划</b></small>
+        </div>
+        <hr class="transparent mx-3 my-0">
+        <div class="jihua">
+          <div [hidden]="!submitted">
+            <div class="jihuabiao">
+              <label>每天消灭错题数: </label>
+                <div style="height: 5%;border-radius: 5px;background-color: #555555;text-align: center;color: #ffffff;">
+                  <h2>{{daycuo}}</h2>
+                </div>
+              <br>
+            </div>
+          </div>
+          <div style="margin-top: 2%;margin-bottom: 2%;">
+        <button type="button" class="btn" (click)="isCollapsed = !isCollapsed" style="background-color:#f2dede;">修改计划
+        </button>
+        <div (collapsed)="collapsed($event)"
+             (expanded)="expanded($event)"
+             [collapse]="isCollapsed"
+             class="card card-block card-header">
+          <div class="well well-lg">
+            <form *ngIf="active" (ngSubmit)="onSubmit()" #siteForm="ngForm">
+              <div class="form-group" style="width: 100%;">
+                <label>每日错题数：</label><input  type="text"  [(ngModel)]="daycuo" name="daycuo"  class="form-control">
+                <!--<label>天数：</label><input type="text" [(ngModel)]="tianshu" name="tianshu"  class="form-control">-->
+                <br>
+                <button type="submit" class="btn" [disabled]="!siteForm.form.valid" style="float: right;">提交</button>
+              </div>
+            </form>
+            <br>
+          </div>
+        </div>
+        </div>
+        </div>
+        <hr>
+        <div class="jindu">
+          <label>消灭进度：</label>
+          <br>
+          <progressbar [max]="max" [value]="dynamic">
+            <span style="color:#555555; white-space:nowrap;">{{dynamic}} / {{max}}</span>
+          </progressbar>
+        </div>
+      </tab>
+      <tab>
+        <ng-template tabHeading><i class="icon-speech"></i></ng-template>
+        <div class="callout m-0 py-2 text-muted text-center bg-faded text-uppercase">
+                   <small><b>我的关注</b></small>
+        </div>
+        <div class="p-3">
+          <div class="message" style="height: 60px;overflow: hidden;">
+            <div class="py-3 pb-5 mr-3 float-left">
+              <div class="avatar">
+                <a routerLinkActive="active" [routerLink]="['/components/modals']"><img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"></a>
+                <span class="avatar-status badge-success"></span>
+              </div>
+            </div>
+            <div>
+              <small class="text-muted">小GG</small>
+            </div>
+             <div class="text-truncate font-weight-bold">&nbsp;&nbsp;高三三班</div>
+          </div>
+          <hr>
+          <div class="message" style="height: 60px;overflow: hidden;">
+            <div class="py-3 pb-5 mr-3 float-left">
+              <div class="avatar">
+                <a routerLinkActive="active" [routerLink]="['/components/modals']"><img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"></a>
+                <span class="avatar-status badge-success"></span>
+              </div>
+            </div>
+            <div>
+              <small class="text-muted">大高</small>
+            </div>
+            <div class="text-truncate font-weight-bold">&nbsp;&nbsp;高三三班</div>
+          </div>
+          <hr>
+          <div class="message" style="height: 60px;overflow: hidden;">
+            <div class="py-3 pb-5 mr-3 float-left">
+              <div class="avatar">
+                <a routerLinkActive="active" [routerLink]="['/components/modals']"><img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"></a>
+                <span class="avatar-status badge-success"></span>
+              </div>
+            </div>
+            <div>
+              <small class="text-muted">小GG</small>
+            </div>
+            <div class="text-truncate font-weight-bold">&nbsp;&nbsp;高三三班</div>
+          </div>
+          <hr>
+          <div class="message" style="height: 60px;overflow: hidden;">
+            <div class="py-3 pb-5 mr-3 float-left">
+              <div class="avatar">
+                <a routerLinkActive="active" [routerLink]="['/components/modals']"><img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"></a>
+                <span class="avatar-status badge-success"></span>
+              </div>
+            </div>
+            <div>
+              <small class="text-muted">大高</small>
+            </div>
+            <div class="text-truncate font-weight-bold">&nbsp;高三三班</div>
+          </div>
+          <hr>
+          <div class="message" style="height: 60px;overflow: hidden;">
+            <div class="py-3 pb-5 mr-3 float-left">
+              <div class="avatar">
+                <a routerLinkActive="active" [routerLink]="['/components/modals']"><img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"></a>
+                <span class="avatar-status badge-success"></span>
+              </div>
+            </div>
+            <div>
+              <small class="text-muted">小GG</small>
+            </div>
+            <div class="text-truncate font-weight-bold">&nbsp;高三三班</div>
+          </div>
+          <hr>
+          <div class="message" style="height: 60px;overflow: hidden;">
+            <div class="py-3 pb-5 mr-3 float-left">
+              <div class="avatar">
+                <a routerLinkActive="active" [routerLink]="['/components/modals']"><img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"></a>
+                <span class="avatar-status badge-success"></span>
+              </div>
+            </div>
+            <div>
+              <small class="text-muted">大高</small>
+            </div>
+            <div class="text-truncate font-weight-bold">&nbsp;高三三班</div>
+          </div>
+        </div>
+      </tab>
+      <tab>
+        <ng-template tabHeading><i class="icon-settings"></i></ng-template>
+        <div class="callout m-0 py-2 text-muted text-center bg-faded text-uppercase">
+          <small><b>我的积分</b></small>
+        </div>
+        <div class="jifen">
+          <p><i class="fa fa-smile-o">我的积分</i></p>
+          <div style="text-align: center;"><h2>12</h2></div>
+          <a href="#" style="color: #555555;color:#4ebd74;float:right;"><p><i class="fa fa-hand-o-right" style="color: #4ebd74;"></i>我要充值</p></a>
+          <div style="clear: both;"><p></p></div>
+        </div>
+        <div class="jifenqu">
+          <ul style="padding: 1%;">
+            <li>
+              <p><i class="fa fa-check-circle-o">回答问题</i> &nbsp;  &nbsp; &nbsp;  &nbsp; -----<i class="fa fa-smile-o">5</i></p>
+              <a routerLinkActive="active" [routerLink]="['/components/switches']"  style="color: #4ebd74;float: right;"><i class="fa fa-flash (alias)" style="color: #4ebd74"></i>去回答</a>
+            </li>
+            <div style="clear: both;height: 2%;"><p></p></div>
+            <hr>
+            <li>
+              <p><i class="fa fa-check-circle-o">完成计划</i>  &nbsp;  &nbsp; &nbsp;  &nbsp;-----<i class="fa fa-smile-o">5</i></p>
+              <a routerLinkActive="active" [routerLink]="['/components/buttons']"  style="color: #4ebd74;float: right;"><i class="fa fa-flash (alias)" style="color: #4ebd74"></i>去完成</a>
+            </li>
+            <div style="clear: both;height: 2%;"><p></p></div>
+            <hr>
+            <li>
+              <p><i class="fa fa-check-circle-o">知识突破</i> &nbsp;  &nbsp; &nbsp;  &nbsp; -----<i class="fa fa-smile-o">5</i></p>
+              <a routerLinkActive="active" [routerLink]="['/widgets/tchis']"  style="color: #4ebd74;float: right;"><i class="fa fa-flash (alias)" style="color: #4ebd74"></i>去突破</a>
+            </li>
+            <div style="clear: both;height: 2%;"><p></p></div>
+            <hr>
+          </ul>
+        </div>
+      </tab>
+    </tabset>
+  </aside>
+</div>
+
+<footer class="app-footer">
+  <a href="http://coreui.io">错要改</a> &copy; 2017 hellworld.
+  <span class="float-right">Powered by <a href="http://coreui.io">Mrs take</a></span>
+</footer>

@@ -1,0 +1,119 @@
+        <div class="timu" (click)="isCollapsed= !isCollapsed">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="shunxu-true"><p>{{i}}</p></div>
+              <span class="date">{{cuoti.date}}</span>
+            </div>
+            <div class="panel-body">
+            <!--  <p>{{cuoti.tigan.string}}</p>
+              <img [src]=cuoti.tigan.img>-->
+              <div [innerHtml]="cuoti.tigan"></div>
+            </div>
+          </div>
+      </div>
+      <div  (collapsed)="collapsed($event)"
+           (expanded)="expanded($event)"
+           [collapse]="isCollapsed"
+           class="card card-block card-header jiexiqu">
+        <div class="well well-lg">
+          <div class="row trow"><i class="fa fa-file-text"></i>&nbsp; 解析:
+            <div [innerHtml]="cuoti.explain"></div>
+          </div>
+          <hr>
+          <div class="row trow"><i class="fa fa-check-square-o"></i>&nbsp;知识点：{{cuoti.zhishidian}}
+            <div class="row" style="margin-left: 85%"><a href="#"><i class="fa fa-commenting-o"></i>问题反馈</a></div>
+          </div>
+          <div style="clear: both;"><p></p></div>
+          <hr>
+          <div class="row trow"><i class="fa fa-circle-o"></i>&nbsp;错因分析：
+            <div>
+            <!--  <button type="submit" class="btn"(click)="chuxian(i)">修改错因</button>-->
+              <rl-tag-input [(ngModel)]="tags"  placeholder="修改错因"></rl-tag-input>
+            </div>
+          </div>
+          <hr>
+          <div class="row trow"><i class="fa fa-lightbulb-o"></i>&nbsp;重要程度：<rating [(ngModel)]="x" max="5" stateOn="fa fa-star-o" stateOff="fa fa-reddit-alien"
+                                                                                    style="color: #555555;"></rating>
+           <!-- <b>(<i>Rate:</i> {{cuoti.rate}})</b></div>-->
+          <hr>
+        </div>
+        <div class="row trow"><i class="fa fa-star-o"></i><a  routerLinkActive="active" [routerLink]="['/components/xiangsi']">&nbsp;相似题推荐</a></div>
+          <hr>
+        <div class="pinglun">
+          <tabset>
+            <tab heading="笔记">
+              <form>
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#">
+                      <img class="media-object" src="assets/img/tou.jpg" alt="我的头像" style="width: 50px;height: 50px;border-radius: 80px;margin-right: 20px;">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <textarea rows="4" cols="90" name="mypinglun" placeholder="写下你的想法...(0/300)" style="width: 95%;" ></textarea>
+                    <webuploader [options]="imgOptions1" (onReady)="onImgReady1($event)" (onDestroy)="onImgDestroy1()">
+                      <div id="uploader-demo1" class="wu-example">
+                        <div id="fileList1" class="uploader-list"></div>
+                        <div id="filePicker1" style="height: 16px;"><img src="assets/img/tupian.png"><span style="color:#4dbd74;">&nbsp;&nbsp;图片</span></div>
+                      </div>
+                    </webuploader>
+                  </div>
+                </div>
+                <button type="submit"style="float: right;margin-right:30px;width:80px;height: 40px;border-radius: 5px;background: #4ebd74;color: #ffffff">发表评论</button>
+              </form>
+              <div class="mykong">
+                <p></p>
+              </div>
+              <div class="mykong">
+                <p></p>
+              </div>
+              <hr>
+              <div class="mykong">
+                <p></p>
+              </div>
+              <ul style="padding: 0">
+                <li *ngFor="let com of coms let i=index">
+                  <my-comment [com]="com" [id]="cuoti.id"></my-comment>
+                </li>
+              </ul>
+            </tab>
+            <tab heading="疑问">
+              <form>
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#">
+                      <img class="media-object" src="assets/img/tou.jpg" alt="我的头像" style="width: 50px;height: 50px;border-radius: 80px;margin-right: 20px;">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <textarea rows="4" cols="90" name="mypinglun" placeholder="写下你的想法...(0/300)" style="width: 95%;" ></textarea>
+                    <webuploader [options]="imgOptions1" (onReady)="onImgReady1($event)" (onDestroy)="onImgDestroy1()">
+                      <div id="uploader-demo2" class="wu-example">
+                        <div id="fileList2" class="uploader-list"></div>
+                        <div id="filePicker2" style="height: 16px;"><img src="assets/img/tupian.png"><span style="color:#4dbd74;">&nbsp;&nbsp;图片</span></div>
+                      </div>
+                    </webuploader>
+                  </div>
+                </div>
+                <button type="submit"style="float: right;margin-right:30px;width:80px;height: 40px;border-radius: 5px;background: #4ebd74;color: #ffffff">发表评论</button>
+              </form>
+              <div class="mykong">
+                <p></p>
+              </div>
+              <div class="mykong">
+                <p></p>
+              </div>
+              <hr>
+              <div class="mykong">
+                <p></p>
+              </div>
+              <ul style="padding: 0">
+                <li *ngFor="let com of coms2 let i=index">
+                  <my-comment [com]="com" [id]="cuoti.id"></my-comment>
+                </li>
+              </ul>
+            </tab>
+          </tabset>
+        </div>
+      </div>
+      </div>

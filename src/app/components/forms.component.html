@@ -1,0 +1,101 @@
+<div class="shangchuan">
+    <div class="card">
+      <div class="card-header">
+        <strong>错题上传</strong>
+      </div>
+      <div class="card-block">
+        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+          <!--<div class="form-group row">
+            <label class="col-md-3 form-control-label">Static</label>
+            <div class="col-md-9">
+              <p class="form-control-static">Username</p>
+            </div>
+          </div>-->
+          <div class="form-group row">
+            <label class="col-md-3 form-control-label">错题上传</label>
+            <webuploader [options]="imgOptions1" (onReady)="onImgReady1($event)" (onDestroy)="onImgDestroy1()">
+              <div id="uploader-demo1" class="wu-example">
+                <div id="fileList1" class="uploader-list"></div>
+                <div id="filePicker1" style="height: 40px;width: 80px;background-color: #4ebd74;border-radius: 10px;padding:10px;text-align: center;">选择图片</div>
+              </div>
+            </webuploader>
+          </div>
+          <hr>
+          <div class="form-group row">
+            <label class="col-md-3 form-control-label" >答案上传</label>
+            <webuploader [options]="imgOptions2" (onReady)="onImgReady2($event)" (onDestroy)="onImgDestroy2()">
+              <div id="uploader-demo2" class="wu-example">
+                <div id="fileList2" class="uploader-list"></div>
+                <div id="filePicker2" style="height: 40px;width: 80px;background-color: #4ebd74;border-radius: 10px;padding:10px;text-align: center;">选择图片</div>
+              </div>
+            </webuploader>
+          </div>
+          <hr>
+         <div class="form-group row">
+            <label class="col-md-3 form-control-label">重要程度</label>
+            <div>
+              <rating [(ngModel)]="x" max="5" stateOn="fa fa-star-o" stateOff="fa fa-reddit-alien"
+                      style="color: #555555;"></rating>
+            </div>
+          </div>
+        </form>
+      </div>
+     <!-- <div class="pinglun">
+        <tabset>
+          <tab heading="笔记">
+            <form>
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object" src="assets/img/touxiang.png" alt="我的头像" style="width: 50px;height: 50px;border-radius: 80px;margin-right: 20px;">
+                </a>
+              </div>
+              <div class="media-body">
+                <textarea rows="4" cols="90" name="mypinglun" placeholder="写下你的想法.." style="width: 95%;" ></textarea>
+                <input id ="input-1"type="file"class ="file">
+                <span class="num-limit"><span id="js-pl-limit">0</span>/300</span>
+              </div>
+            </div>
+            <button type="submit"style="float: right;margin-right:30px;width:80px;height: 40px;border-radius: 5px;background: #4ebd74;color: #ffffff">发表评论</button>
+            </form>
+            <div class="mykong">
+              <p></p>
+            </div>
+            <div class="mykong">
+              <p></p>
+            </div>
+           &lt;!&ndash; <div style=" clear:both;width: 95%;height: 1px;background-color:#c0c0c0;margin-left: auto;margin-right: auto;"></div>&ndash;&gt;
+            <hr>
+            <div class="mykong">
+              <p></p>
+            </div>
+            <div class="pinglunqu" style="width: 95%;">
+              <ul>
+                <li>
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <img class="media-object" src="assets/img/touxiang.png" alt="我的头像" style="width: 50px;height: 50px;border-radius: 80px;margin-right: 20px;">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <p class="media-heading"><strong>用户id</strong></p>
+                      <p></p>
+                      <a title="赞" class="zan" (click)="add()"><i class="fa fa-thumbs-o-up"></i><span>{{num}}</span></a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </tab>
+          <tab heading="疑问">
+
+          </tab>
+        </tabset>
+      </div>-->
+
+      <div class="card-footer">
+        <button type="submit" class="btn btn-sm btn-primary" routerLinkActive="active" [routerLink]="['/components/one']" style="background-color: #2f3c49;border: none;"><i class="fa fa-dot-circle-o"></i>&nbsp;确定</button>
+      </div>
+    </div>
+</div>

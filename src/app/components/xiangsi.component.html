@@ -1,0 +1,12 @@
+<script src="upload.component.ts"></script>
+<div class="xiangsi">
+  <div class="page-header">
+    <h6>&nbsp;&nbsp;&nbsp;相似题推荐</h6>
+  </div>
+  <hr>
+<ul style="padding: 0">
+  <li *ngFor="let cuoti of xcuotis let i=index">
+    <my-cuoti [cuoti]="cuoti" [i]="i+1"></my-cuoti>
+  </li>
+</ul>
+</div>

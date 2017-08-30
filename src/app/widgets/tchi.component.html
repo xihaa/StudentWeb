@@ -1,0 +1,22 @@
+<div class="chuti">
+  <div class="btn-group" role="group" style="margin-left: 70%;margin-top:4%;">
+    <button type="button" class="btn btn-default">换一批</button>
+    <button type="button" class="btn btn-default"><a href="download/170803math.docx"  download>导出PDF/WORD</a></button>
+  </div>
+  <ul style="padding: 0">
+    <li *ngFor="let ti of timus let i=index">
+      <my-timu [ishid]="ishidd" [timu]="ti" [i]="i+1" [jieguo]="jieguo"></my-timu>
+    </li>
+  </ul>
+  <div class="btn-group" role="group" style="margin-left: 75%;margin-top: 2%">
+  <button  type="button" class="btn btn-default" (click)="over()" >提交试卷</button>
+  <button  type="button" class="btn btn-default" (click)="onClickMe()"  [disabled]="jieguo" >查看解析</button>
+  </div>
+    <div class="alert alert-success" role="alert" style="width: 80%;margin-left: auto;margin-right: auto;margin-top: 2%;" [hidden]="jieguo">
+      <div >
+        本次您做错了<strong> {{count.length}} </strong>道题; &nbsp;其中包括知识点有：
+        <span *ngFor="let c of count">{{c.timu.zhishidian}} ,</span>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

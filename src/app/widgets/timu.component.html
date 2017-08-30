@@ -1,0 +1,56 @@
+      <div class="timu">
+        <div>
+          <div class="shunxu-{{jieguo||isright}}"><p>{{i}}</p></div>
+          <div [innerHtml]="timu.tigan"></div>
+        </div>
+        <div class="dati">
+          <div class="radio-inline">
+            <label>
+              <input type="radio" [name]="i" value="A" checked #cho [(ngModel)]="answer">A &nbsp;
+            </label>
+            <label>
+             <input type="radio" [name]="i" value="B" checked #cho [(ngModel)]="answer"> B &nbsp;
+            </label>
+            <label>
+             <input type="radio" [name]="i" value="C" checked #cho [(ngModel)]="answer"> C &nbsp;
+            </label>
+            <label>
+             <input type="radio" [name]="i" value="D" checked #cho [(ngModel)]="answer"> D &nbsp;
+            </label>
+          </div>
+      </div>
+      </div>
+        <div class="jiexiqu" [hidden]="ishid">
+            <div class="row trow"><i class="fa fa-file-text"></i>&nbsp; 解析:
+              <div [innerHtml]="timu.explain"></div>
+            </div>
+            <hr>
+            <div class="row trow"><i class="fa fa-check-square-o"></i>&nbsp;知识点：{{timu.zhishidian}}
+              <div class="row" style="margin-left: 85%"><a href="#"><i class="fa fa-commenting-o"></i>问题反馈</a></div>
+            </div>
+            <div style="clear: both;"><p></p></div>
+            <hr>
+            <div class="row trow"><i class="fa fa-circle-o"></i>&nbsp;最易错因：{{timu.zcuoyin}}
+            </div>
+            <hr>
+          <div style="float: right">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/widgets/detail/'+timu.id]"><i class="fa fa-edit"></i>查看详情</a>
+          <button type="button" class="btn btn-primary" (click)="smModal.show()">加入错题本</button>
+          </div>
+          <div style="clear: both"><p></p></div>
+          <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title pull-left"></h4>
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="smModal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                 错题添加成功
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
